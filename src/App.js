@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import React, { Component } from 'react';
+import Navbar from './components/Navbar';
+import News from './components/News';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  
+} from "react-router-dom";
+
+export default class App extends Component {
+  Pgno=6;
+  render() {
+    return <div>
+      <Router>
+      <Navbar/>
+      <Routes>
+        {/* we will add unique key to force re-mound  */} 
+          <Route exact path="/" element={<News pagesize={this.Pgno} country="in" key="home" category="General"/>}/>
+          <Route exact path="/technology" element={<News pagesize={this.Pgno} country="in" key="technology" category="Technology"/>}/>
+          <Route exact path="/Business" element={<News pagesize={this.Pgno} country="in" key="Businessscience" category="Business"/>}/>
+          <Route exact path="/Entertainment" element={<News pagesize={this.Pgno} country="in" key="Entertainment" category="Entertainment"/>}/>
+          <Route exact path="/General" element={<News pagesize={this.Pgno} country="in" key="General" category="General"/>}/>
+          <Route exact path="/Health" element={<News pagesize={this.Pgno} country="in" key="Health" category="Health"/>}/>
+          <Route exact path="/Science" element={<News pagesize={this.Pgno} country="in" key="Science" category="Science"/>}/>
+          <Route exact path="/sports" element={<News pagesize={this.Pgno} country="in" key="sports" category="Sports"/>}/>
+
+
+
+
+         
+        </Routes>
+    
+      </Router>
+    </div>;
+  }
 }
 
-export default App;

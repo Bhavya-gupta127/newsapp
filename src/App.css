@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +36,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.col-md-4 img{
+  height: 190px;
+}
+.heading{
+  text-align: center;
+}
+
+body{
+  background-color: #F9F3EE;
+  /* color: #97C4B8; */
 }
